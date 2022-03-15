@@ -47,6 +47,62 @@ RUN apt-get -qqy update \
     && apt-add-repository ppa:obsproject/obs-studio \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
+    && apt-get install -y --no-install-recommends \
+        dbus-x11 \
+        nautilus \
+        gedit \
+        expect \
+        sudo \
+        bash \
+        net-tools \
+        novnc \
+        xfce4 \
+	    socat \
+    	unzip \
+        x11vnc \
+	    xvfb \
+        supervisor \
+        curl \
+        git \
+        wget \
+        g++ \
+    	unzip \
+        ssh \
+	    chromium-browser \
+    	firefox \
+        terminator \
+        htop \
+        gnupg2 \
+	    locales \
+    	xfonts-intl-chinese \
+	    fonts-wqy-microhei \  
+    	ibus-pinyin \
+	    ibus \
+    	ibus-clutter \
+	    ibus-gtk \
+    	ibus-gtk3 \
+	    ibus-qt4 \
+    	python3-pip \
+	    python-pip \
+    	python3-setuptools \
+	    python-setuptools \
+	
+    && apt-get autoclean \
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN dpkg-reconfigure locales
+RUN wget --no-check-certificate -c https://golang.org/dl/go1.16.3.linux-amd64.tar.gz
+RUN tar -C /usr/local -xvzf go1.*.tar.gz
+RUN export PATH=$PATH:/usr/local/go/bin
+
+
+RUN git clone https://github.com/vlakhani28/bbht.git
+RUN chmod +x bbht/install.sh
+RUN ./bbht/install.sh
+RUN mv bbht/run-after-go.sh /root/tools
+RUN chmod +x /root/tools/run-after-go.sh
+
     && apt install unzip \
     && apt-get autoclean \
     && apt-get autoremove \
