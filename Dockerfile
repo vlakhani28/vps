@@ -83,9 +83,7 @@ RUN apt-get -qqy update \
     	ibus-gtk3 \
 	    ibus-qt4 \
     	python3-pip \
-	    python-pip \
     	python3-setuptools \
-	    python-setuptools \
 	
     && apt install unzip \
     && apt-get autoclean \
