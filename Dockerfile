@@ -90,6 +90,10 @@ RUN apt-get -qqy update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+    && apt install unzip \
+    && apt-get autoclean \
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN dpkg-reconfigure locales
 RUN wget --no-check-certificate -c https://golang.org/dl/go1.16.3.linux-amd64.tar.gz
@@ -103,10 +107,7 @@ RUN ./bbht/install.sh
 RUN mv bbht/run-after-go.sh /root/tools
 RUN chmod +x /root/tools/run-after-go.sh
 
-    && apt install unzip \
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
 
 # COPY conf.d/* /etc/supervisor/conf.d/
 
