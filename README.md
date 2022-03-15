@@ -5,7 +5,7 @@
 ### Features:
   - Works for straight 12 hours
   - Upto 100 Mbps of Internet
-  - Running on Ubuntu 18.04 Docker Image
+  - Running on Ubuntu 20.0 Docker Image
   - Chromium and Firefox Included
   - Bug Bounty Tools Included
   - Easy to use
