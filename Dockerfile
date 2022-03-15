@@ -81,7 +81,6 @@ RUN apt-get -qqy update \
     	ibus-clutter \
 	    ibus-gtk \
     	ibus-gtk3 \
-	    ibus-qt4 \
     	python3-pip \
     	python3-setuptools \
 	
