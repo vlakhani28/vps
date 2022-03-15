@@ -87,9 +87,6 @@ RUN apt-get -qqy update \
     	python3-setuptools \
 	    python-setuptools \
 	
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/*
     && apt install unzip \
     && apt-get autoclean \
     && apt-get autoremove \
